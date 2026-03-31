@@ -1,24 +1,34 @@
 import React from "react";
+import { sliderData } from "../data/sliderData";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 
 const Slider = () => {
     return (
         <section id="sliderType">
             <h2 className="blind">슬라이더 유형</h2>
-            <div className="slider_img s1">
-                <div className="desc container">
-                    <span>dessert cafe</span>
-                    <h3>DESSERT TRENDS</h3>
-                    <p>
-                        카페와 어울리는 세상의 모든 디저트를 만나보세요! 공간의 분위기를 매력적으로 전환시켜 줄거예요!
-                    </p>
-                    <div className="btn">
-                        <a href="#">자세히 보기</a>
-                        <a href="#" className="brown">
-                            사이트 보기
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <Swiper navigation={true} Pagination={true} modules={[Navigation, Pagination]} className="dessert_hero">
+                {sliderData.map((slider) => (
+                    <SwiperSlide key={slider.id}>
+                        <div className={`slider_img ${slider.className}`}>
+                            <div className="desc container">
+                                <span>{slider.subtitle}</span>
+                                <h3>{slider.title}</h3>
+                                <p>{slider.desc}</p>
+                                <div className="btn">
+                                    <a href="#">자세히 보기</a>
+                                    <a href="#" className="brown">
+                                        사이트 보기
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </section>
     );
 };
