@@ -24,3 +24,13 @@
 .banner_inner .small {
     text-decoration: underline;
 }
+
+.banner_inner {
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 0.3s;
+}
+.banner_inner.active {
+    opacity: 1;
+    transform: translateY(0);
+}

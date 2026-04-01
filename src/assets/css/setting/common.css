@@ -43,3 +43,10 @@
     text-decoration: underline;
     margin-bottom: 16px;
 }
+
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
