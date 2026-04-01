@@ -10,7 +10,12 @@ const Slider = (props) => {
     return (
         <section id="sliderType">
             <h2 className="blind">{props.title}</h2>
-            <Swiper navigation={true} Pagination={true} modules={[Navigation, Pagination]} className="dessert_hero">
+            <Swiper
+                modules={[Navigation, Pagination]}
+                navigation={true}
+                pagination={{ clickable: true }}
+                className="dessert_hero"
+            >
                 {sliderData.map((slider) => (
                     <SwiperSlide key={slider.id}>
                         <div className={`slider_img ${slider.className}`}>
